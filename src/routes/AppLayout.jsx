@@ -22,13 +22,13 @@ class AppLayout extends React.Component {
                     <Menu theme="dark" mode="inline" >
                         <Menu.Item key="1">
                             <Link to="/">
-                                <Icon type="user" />
+                                <Icon type="home" />
                                 <span>首页</span>
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="2">
                             <Link to="/favlist">
-                                <Icon type="user" />
+                                <Icon type="star-o" />
                                 <span>列表</span>
                             </Link>
                         </Menu.Item>
