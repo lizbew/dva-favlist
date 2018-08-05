@@ -1,3 +1,4 @@
+import { baseIntl } from '@common/reactIntl';
 import React from 'react';
 //import { connect } from 'dva';
 import { Link } from 'dva/router';
@@ -23,13 +24,13 @@ class AppLayout extends React.Component {
                         <Menu.Item key="1">
                             <Link to="/">
                                 <Icon type="home" />
-                                <span>首页</span>
+                                <span>{baseIntl.get('menu.homepage')}</span>
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="2">
                             <Link to="/favlist">
                                 <Icon type="star-o" />
-                                <span>列表</span>
+                                <span>{baseIntl.get('menu.list')}</span>
                             </Link>
                         </Menu.Item>
                     </Menu>
@@ -37,7 +38,7 @@ class AppLayout extends React.Component {
 
                 <Layout>
                     <Layout.Header  style={{ background: '#fff', padding: 0 }}>
-                        <div style={{marginLeft: '20px'}}>标题</div>
+                        <div style={{marginLeft: '20px'}}>{baseIntl.get('label.title')}</div>
                     </Layout.Header>
 
                     <Layout.Content style={{ margin: '24px 16px 0' }}>

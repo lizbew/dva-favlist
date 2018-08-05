@@ -1,3 +1,5 @@
+import path from 'path';
+
 export default {
     "extraBabelPlugins": [
         ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }],
@@ -8,4 +10,7 @@ export default {
         }],
     ],
     "theme": "./src/theme.js",
+    "alias": {
+        '@common': path.join(__dirname, 'src/common'),
+    }
 }

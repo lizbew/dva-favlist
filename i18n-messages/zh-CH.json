@@ -1,0 +1,46 @@
+[
+	{
+		"key": "menu.homepage",
+		"defaultMessage": "首页",
+		"source": [
+			{
+				"type": "jsx",
+				"location": "./src/routes/AppLayout.jsx#26#38"
+			}
+		]
+	},
+	{
+		"key": "menu.list",
+		"defaultMessage": "列表",
+		"source": [
+			{
+				"type": "jsx",
+				"location": "./src/routes/AppLayout.jsx#32#38"
+			}
+		]
+	},
+	{
+		"key": "label.title",
+		"defaultMessage": "标题",
+		"source": [
+			{
+				"type": "jsx",
+				"location": "./src/routes/AppLayout.jsx#40#58"
+			},
+			{
+				"type": "text",
+				"location": "./src/routes/FavListPage.jsx#12#8"
+			}
+		]
+	},
+	{
+		"key": "label.link",
+		"defaultMessage": "链接",
+		"source": [
+			{
+				"type": "text",
+				"location": "./src/routes/FavListPage.jsx#16#8"
+			}
+		]
+	}
+]

@@ -1,0 +1,6 @@
+{
+  "importStatement": "import { baseIntl } from '@common/reactIntl';",
+  "callStatement": "baseIntl.get",
+  "targetDir": "i18n-messages",
+  "exclude": []
+}

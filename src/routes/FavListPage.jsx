@@ -1,3 +1,4 @@
+import { baseIntl } from '@common/reactIntl';
 import React from 'react';
 import { connect } from 'dva';
 
@@ -9,11 +10,11 @@ const columns = [
         dataIndex: 'id'
     },
     {
-        title: '标题',
+        title: baseIntl.get('label.title'),
         dataIndex: 'title'
     },
     {
-        title: '链接',
+        title: baseIntl.get('label.link'),
         dataIndex: 'link',
         render: (text, record) => {
             return (
