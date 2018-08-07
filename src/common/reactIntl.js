@@ -3,7 +3,7 @@ import XHR from 'i18next-xhr-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import zhMessages from '../assets/locales/zh-CN/default.json';
-
+import enMessages from '../assets/locales/en-US/default.json';
 
 class Intl {
     constructor() {
@@ -24,7 +24,15 @@ class Intl {
             resources: {
                 'zh-CN': {
                     'default': zhMessages,
+                },
+                'en-US': {
+                    'default': enMessages,
                 }
+            },
+
+            // for LanguageDetector
+            detection: {
+                lookupCookie: 'site_lng',
             }
         }
 
@@ -37,6 +45,14 @@ class Intl {
 
     get(key, options) {
         return i18next.t(key, options);
+    }
+
+    changLanguage(lang, callback) {
+        i18next.changeLanguage(lang, callback);
+    }
+
+    getCurrentLanguage() {
+        return i18next.language;
     }
 }
 

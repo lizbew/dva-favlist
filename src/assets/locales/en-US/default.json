@@ -1,0 +1,7 @@
+{
+	"menu.homepage": "Home Page",
+	"menu.list": "List",
+	"label.title": "Title",
+	"label.link": "Link",
+	"msg.total_count": "Total {{total}} items"
+}

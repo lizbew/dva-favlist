@@ -25,7 +25,7 @@ const columns = [
 ];
 
 function showTotal(total){
-    return `总共${total}项`;
+    return baseIntl.get('msg.total_count', { total })
 }
 
 const FavListPage = ({favlist}) =>　{

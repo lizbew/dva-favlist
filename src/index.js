@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import dva from 'dva';
+import { baseIntl } from '@common/reactIntl';
 
-import {LocaleProvider} from 'antd';
+import { LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
+import enUS from 'antd/lib/locale-provider/en_US';
 
 import './index.css';
 
@@ -30,8 +32,10 @@ app.router(require('./router').default);
 // 5. Start
 const App = app.start();
 
+const lang = baseIntl.getCurrentLanguage();
+
 ReactDOM.render(
-    <LocaleProvider locale={zhCN}>
+    <LocaleProvider locale={lang === 'zh-CN'? zhCN: enUS}>
         <App />
     </LocaleProvider>,
     document.getElementById('root')
