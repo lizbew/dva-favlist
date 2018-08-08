@@ -2,6 +2,8 @@
 
 使用dvajs前端框架、antd界面库的react项目， 主要为了实现国际化进行的技术实践。
 
+演示地址 http://blog.vikazhou.com/demo/dva-favlist/#/favlist
+
 ## 运行项目
 
 git clone项目之后， 进入项目目录， 按如下进行操作
