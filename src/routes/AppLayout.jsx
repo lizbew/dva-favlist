@@ -57,6 +57,12 @@ class AppLayout extends React.Component {
                                 <span>{baseIntl.get('menu.list')}</span>
                             </Link>
                         </Menu.Item>
+                        <Menu.Item key="3">
+                            <Link to="/tasklist">
+                                <Icon type="star-o" />
+                                <span>{baseIntl.get('menu.tasklist')}</span>
+                            </Link>
+                        </Menu.Item>
                     </Menu>
                 </Layout.Sider>
 

@@ -2,7 +2,8 @@ import { baseIntl } from '@common/reactIntl';
 import React from 'react';
 import { connect } from 'dva';
 
-import { Table } from 'antd';
+import { Table, Button } from 'antd';
+import AddTaskModal from './AddTaskModal';
 
 const columns = [
     {
@@ -28,18 +29,29 @@ function showTotal(total) {
     return baseIntl.get('msg.total_count', { total })
 }
 
-const FavListPage = ({ favlist }) => {
+
+const TaskListPage = ({ dispatch, tasklist }) => {
 
     const pagination = {
         showSizeChanger: true,
         showTotal,
     }
 
+    function handleOpenModel() {
+        dispatch({
+            type: 'tasklist/showEditModal'
+        });
+    }
+
     return (
         <div>
+            <div>
+                <Button onClick={handleOpenModel}>添加任务</Button>
+            </div>
+            <AddTaskModal />
             <Table
                 columns={columns}
-                dataSource={favlist.list}
+                dataSource={tasklist.list}
                 rowKey="id"
                 pagination={pagination}
             />
@@ -47,7 +59,7 @@ const FavListPage = ({ favlist }) => {
     );
 }
 
-const mapStateToProps = ({ favlist }) => ({ favlist });
+const mapStateToProps = ({ tasklist }) => ({ tasklist });
 
-export default connect(mapStateToProps)(FavListPage);
+export default connect(mapStateToProps)(TaskListPage);
 

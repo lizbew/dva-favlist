@@ -25,6 +25,7 @@ const app = dva({
 
 // 3. Model
 app.model(require('./models/favlist').default);
+app.model(require('./models/tasklist').default);
 
 // 4. Router
 app.router(require('./router').default);

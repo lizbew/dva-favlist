@@ -1,7 +1,9 @@
 {
 	"menu.homepage": "Home Page",
 	"menu.list": "List",
+	"menu.tasklist": "Task List",
 	"label.title": "Title",
 	"label.link": "Link",
-	"msg.total_count": "Total {{total}} items"
+	"msg.total_count": "Total {{total}} items",
+	"task.add_task": "add task"
 }
