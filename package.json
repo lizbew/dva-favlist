@@ -14,7 +14,8 @@
     "i18next-browser-languagedetector": "^2.2.3",
     "i18next-xhr-backend": "^1.5.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "babel-plugin-dva-hmr": "^0.3.2",

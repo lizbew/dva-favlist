@@ -12,5 +12,11 @@ export default {
     "theme": "./src/theme.js",
     "alias": {
         '@common': path.join(__dirname, 'src/common'),
+    },
+    "proxy": {
+        "/saytodo": {
+            "target": "http://localhost:8080",
+            "changeOrigin": true
+        }
     }
 }

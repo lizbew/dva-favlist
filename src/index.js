@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import dva from 'dva';
+//import createLogger from 'redux-logger';
+
 import { baseIntl } from '@common/reactIntl';
 
 import { LocaleProvider } from 'antd';
+
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import enUS from 'antd/lib/locale-provider/en_US';
 
@@ -21,7 +24,9 @@ const app = dva({
 });
 
 // 2. Plugins
-// app.use({});
+//app.use({
+//    onAction: createLogger(),
+//});
 
 // 3. Model
 app.model(require('./models/favlist').default);

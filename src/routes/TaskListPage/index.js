@@ -2,28 +2,12 @@ import { baseIntl } from '@common/reactIntl';
 import React from 'react';
 import { connect } from 'dva';
 
-import { Table, Button } from 'antd';
+import { 
+    Table, Button , Divider
+} from 'antd';
 import AddTaskModal from './AddTaskModal';
 
-const columns = [
-    {
-        title: '#',
-        dataIndex: 'id'
-    },
-    {
-        title: baseIntl.get('label.title'),
-        dataIndex: 'title'
-    },
-    {
-        title: baseIntl.get('label.link'),
-        dataIndex: 'link',
-        render: (text, record) => {
-            return (
-                <a href={text} target="_blank" rel="noopener noreferrer">{text}</a>
-            );
-        }
-    },
-];
+
 
 function showTotal(total) {
     return baseIntl.get('msg.total_count', { total })
@@ -32,23 +16,76 @@ function showTotal(total) {
 
 const TaskListPage = ({ dispatch, tasklist }) => {
 
+    const columns = [
+        {
+            title: 'Action',
+            render: (text, row, index) => (
+                <span>
+                    <a href="javascript:;" onClick={() => editTask(row)}>Edit</a>
+                    <Divider type="vertical" />
+                    <a href="javascript:;" onClick={() => editTask(row)}>Cancel</a>
+                </span>
+
+            ),
+            key: '1'
+    
+        },
+        {
+            title: baseIntl.get('label.title'),
+            dataIndex: 'title',
+            key: '2'
+        },
+        {
+            title: baseIntl.get('label.link'),
+            dataIndex: 'link',
+            render: (text, record) => {
+                return (
+                    <a href={text} target="_blank" rel="noopener noreferrer">{text}</a>
+                );
+            },
+            key: '3'
+        },
+        {
+            title: baseIntl.get('label.status'),
+            dataIndex: 'status',
+            key: '4'
+        },
+    ];
+
     const pagination = {
         showSizeChanger: true,
         showTotal,
     }
 
-    function handleOpenModel() {
+    function editTask(task) {
         dispatch({
-            type: 'tasklist/showEditModal'
+            type: 'tasklist/editTaskModal',
+            payload: task,
+        })
+    }
+
+    function handleAddTask() {
+        dispatch({
+            type: 'tasklist/addTaskModal'
+        });
+    }
+
+    function reloadList() {
+        dispatch({
+            type: 'tasklist/fetchTaskList'
         });
     }
 
     return (
         <div>
             <div>
-                <Button onClick={handleOpenModel}>添加任务</Button>
+                <Button onClick={handleAddTask}>添加任务</Button>
+                <Button onClick={reloadList}>刷新</Button>
             </div>
-            <AddTaskModal />
+            <AddTaskModal 
+                onOk={reloadList}
+                onCancel={reloadList}
+            />
             <Table
                 columns={columns}
                 dataSource={tasklist.list}

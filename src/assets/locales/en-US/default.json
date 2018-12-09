@@ -4,6 +4,7 @@
 	"menu.tasklist": "Task List",
 	"label.title": "Title",
 	"label.link": "Link",
+	"label.status": "Status",
 	"msg.total_count": "Total {{total}} items",
 	"task.add_task": "add task"
 }

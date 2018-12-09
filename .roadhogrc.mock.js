@@ -1,4 +1,4 @@
 
 export default {
-    '/saytodo': 'http://blog.vikazhou.com',
+    '/saytodo': 'http://localhost:8080',
 };

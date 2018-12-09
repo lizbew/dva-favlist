@@ -4,6 +4,7 @@
 	"menu.tasklist": "任务列表",
 	"label.title": "标题",
 	"label.link": "链接",
+	"label.status": "状态",
 	"msg.total_count": "总共{{total}}项",
 	"task.add_task": "新增任务"
 }
